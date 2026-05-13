@@ -2,3 +2,5 @@ today I have learned
 git add
 git commit
 git push
+1)Solved two python problems
+2)Solved a SQL problems 
