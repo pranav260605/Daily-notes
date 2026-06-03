@@ -1,0 +1,8 @@
+SELECT a.dept_name, a.emp_name, a.salary
+FROM (
+    SELECT d.dept_name, e.emp_name, e.salary,
+           DENSE_RANK() OVER (PARTITION BY e.dept_id ORDER BY e.salary DESC) AS ranker
+    FROM employees e
+    LEFT JOIN departments d ON e.dept_id = d.dept_id
+) AS a
+WHERE a.ranker = 2;
